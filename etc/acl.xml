@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="SY_Callback::header" title="Callback Extension" sortOrder="0">
+					<resource id="SY_Callback::requests" title="Requests" sortOrder="1"/>
+					<resource id="SY_Callback::configuration" title="Configuration" sortOrder="2" />
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

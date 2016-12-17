@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="SY\Callback\Api\Data\RequestInterface" type="SY\Callback\Model\Request" />
+    <virtualType name="CallbackGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="CallbackGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">SY\Callback\Model\Resource\Request\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">CallbackGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="SY\Callback\Model\Resource\Request\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sy_callback_entity</argument>
+            <argument name="resourceModel" xsi:type="string">SY\Callback\Model\Resource\Request</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="sy_callback_requests_listing_data_source" xsi:type="string">SY\Callback\Model\Resource\Request\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

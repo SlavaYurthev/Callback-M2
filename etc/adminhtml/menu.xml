@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="SY_Callback::header" title="Callback Extension" module="SY_Callback" sortOrder="0" resource="SY_Callback::header" parent="Magento_Customer::customer"/>
+		<add id="SY_Callback::requests" title="Requests" module="SY_Callback" sortOrder="1" parent="SY_Callback::header" action="sy_callback/requests" resource="SY_Callback::requests"/>
+		<add id="SY_Callback::configuration" title="Configuration" module="SY_Callback" sortOrder="2" parent="SY_Callback::header" action="adminhtml/system_config/edit/section/sy_callback_configuration" resource="SY_Callback::configuration"/>
+	</menu>
+</config>

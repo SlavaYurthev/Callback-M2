@@ -1,0 +1,70 @@
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.callback-button-icon {
+	display: inline-block;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	background-size: 100%;
+	background-image: url(../img/callback_75.png);
+	background-repeat: no-repeat;
+	opacity: 0.7;
+	width: 50px;
+	height: 50px;
+	text-indent: -99999;
+	z-index: 899;
+	-webkit-transition: opacity .1s ease-in-out;
+    -moz-transition: opacity .1s ease-in-out;
+    -ms-transition: opacity .1s ease-in-out;
+    -o-transition: opacity .1s ease-in-out;
+    transition: opacity .1s ease-in-out;
+}
+.callback-button-icon-pulse {
+	animation-name: pulse;
+	animation-duration: 1000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+.callback-button-icon:hover {
+	opacity: 0.9;
+}
+.callback-button-send {
+	float: right;
+}

@@ -1,0 +1,67 @@
+<!--
+/**
+ * Callback
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<?php if($this->isActive()): ?>
+	<div style="display:none;">
+		<div id="callback-modal">
+			<form data-mage-init='{"validation": {}}' action="<?php echo $this->getUrl('sy_callback/post/save'); ?>" method="POST" id="callback-form">
+				<fieldset class="fieldset create info">
+					<legend class="legend"><span><?php echo __('Personal Information'); ?></span></legend><br>
+					<div class="field field-name-firstname required">
+						<label class="label" for="firstname">
+							<span><?php echo __('First Name'); ?></span>
+						</label>
+						<div class="control">
+							<input type="text" id="firstname" name="firstname" value="<?php echo $this->getFirstname(); ?>" title="<?php echo __('First Name'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+						</div>
+					</div>
+					<div class="field field-name-lastname required">
+						<label class="label" for="lastname">
+							<span><?php echo __('Last Name'); ?></span>
+						</label>
+						<div class="control">
+							<input type="text" id="lastname" name="lastname" value="<?php echo $this->getLastname(); ?>" title="<?php echo __('Last Name'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+						</div>
+					</div>
+					<div class="field field-name-telephone required">
+						<label class="label" for="telephone">
+							<span><?php echo __('Telephone'); ?></span>
+						</label>
+						<div class="control">
+							<input type="text" id="telephone" name="telephone" value="<?php echo $this->getTelephone(); ?>" title="<?php echo __('Telephone'); ?>" class="input-text required-entry" data-validate="{required:true}" autocomplete="off" aria-required="true">
+						</div>
+					</div>
+				</fieldset>
+				<div class=""></div>
+				<fieldset class="fieldset create info">
+					<legend class="legend"><span><?php echo __('Additional'); ?></span></legend><br>
+					<div class="field field-name-comment">
+						<label class="label" for="comment">
+							<span><?php echo __('Comment'); ?></span>
+						</label>
+						<div class="control">
+							<textarea id="comment" name="comment" value="" title="<?php echo __('Telephone'); ?>" class="input-text" autocomplete="off" style="resize:none;"></textarea>
+						</div>
+					</div>
+					<?php if($this->isProductPage()): ?>
+						<div class="field field-name-product">
+							<input type="hidden" name="product_id" value="<?php echo $this->getProductId(); ?>">
+							<label class="label" for="is_product">
+								<span><?php echo __('Product'); ?></span>
+							</label>
+							<input type="checkbox" name="is_product" value="1" id="is_product" class="checkbox" style="margin:5px 0 0;float:right;" checked="checked">
+							<div class="control">
+								<input type="text" id="product" value="<?php echo $this->getProductName(); ?>" class="input-text" autocomplete="off" readonly="readonly">
+							</div>
+						</div>
+					<?php endif; ?>
+				</fieldset>
+				<div class=""></div>
+			</form>
+		</div>
+	</div>
+<?php endif; ?>
