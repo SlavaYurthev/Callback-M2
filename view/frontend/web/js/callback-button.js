@@ -9,28 +9,30 @@ require(
 		'jquery',
 		'Magento_Ui/js/modal/modal'
 	],
-	function($, modal){
-		$('.callback-button-icon').hover(function(){
-			$(this).removeClass('callback-button-icon-pulse');
-		}, function(){
-			$(this).addClass('callback-button-icon-pulse');
-		});
-		var options = {
-			buttons: [{
-				text: $.mage.__('Send'),
-				class: 'callback-button-send primary',
-				click: function () {
-					if($('#callback-form').valid()){
-						$('#callback-form').submit();
+	function(jQuery, modal){
+		jQuery(function(){
+			jQuery('.callback-button-icon').hover(function(){
+				jQuery(this).removeClass('callback-button-icon-pulse');
+			}, function(){
+				jQuery(this).addClass('callback-button-icon-pulse');
+			});
+			var options = {
+				buttons: [{
+					text: jQuery.mage.__('Send'),
+					class: 'callback-button-send primary',
+					click: function () {
+						if(jQuery('#callback-form').valid()){
+							jQuery('#callback-form').submit();
+						}
 					}
-				}
-			}]
-		};
-		if($('#callback-modal').length>0){
-			modal(options, $('#callback-modal'));
-		}
-		callback = function(){
-			$('#callback-modal').modal('openModal');
-		}
+				}]
+			};
+			if(jQuery('#callback-modal').length>0){
+				modal(options, jQuery('#callback-modal'));
+			}
+			callback = function(){
+				jQuery('#callback-modal').modal('openModal');
+			}
+		});
 	}
 );
