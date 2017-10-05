@@ -8,8 +8,43 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
 	<menu>
-		<add id="SY_Callback::header" title="Callback Extension" module="SY_Callback" sortOrder="0" resource="SY_Callback::header" parent="Magento_Customer::customer"/>
-		<add id="SY_Callback::requests" title="Requests" module="SY_Callback" sortOrder="1" parent="SY_Callback::header" action="sy_callback/requests" resource="SY_Callback::requests"/>
-		<add id="SY_Callback::configuration" title="Configuration" module="SY_Callback" sortOrder="2" parent="SY_Callback::header" action="adminhtml/system_config/edit/section/sy_callback_configuration" resource="SY_Callback::configuration"/>
+		<update id="SY::core"
+			 title="Slava Yurthev"
+			 module="SY_Callback"
+			 sortOrder="9999"
+			 resource="Magento_Backend::content" />
+		<update id="SY::developer"
+			 title="Developer"
+			 module="SY_Callback" 
+			 sortOrder="1000"
+			 parent="SY::core"
+			 resource="Magento_Backend::content" />
+		<update id="SY::developer_developer"
+			 title="Developer"
+			 module="SY_Callback" 
+			 sortOrder="1000"
+			 parent="SY::developer"
+			 action="adminhtml/system_config/edit/section/sy_developer/"
+			 resource="Magento_Backend::content" />
+		<add id="SY_Callback::section"
+			 title="Callback"
+			 module="SY_Callback" 
+			 sortOrder="1"
+			 parent="SY::core"
+			 resource="SY_Callback::section" />
+		<add id="SY_Callback::requests"
+			 title="Requests"
+			 module="SY_Callback" 
+			 sortOrder="1"
+			 parent="SY_Callback::section"
+			 action="sy_callback/requests"
+			 resource="SY_Callback::requests" />
+		<add id="SY_Callback::configuration"
+			 title="Configuration"
+			 module="SY_Callback" 
+			 sortOrder="2"
+			 parent="SY_Callback::section"
+			 action="adminhtml/system_config/edit/section/sy_callback_configuration"
+			 resource="SY_Callback::configuration" />
 	</menu>
 </config>
