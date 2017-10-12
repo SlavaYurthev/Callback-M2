@@ -10,7 +10,7 @@ use \Magento\Framework\View\Element\Template\Context;
 use \Magento\Framework\Registry;
 use \Magento\Customer\Model\Session;
 use \Magento\Customer\Model\Customer;
-class Modal extends Template {
+class Callback extends Template {
 	protected $registry;
 	protected $product;
 	public function __construct(

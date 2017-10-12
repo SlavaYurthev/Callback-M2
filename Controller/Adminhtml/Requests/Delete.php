@@ -23,7 +23,7 @@ class Delete extends Action {
 			try {
 				$model->delete();
 				$this->messageManager->addSuccess(__('Deleted.'));
-			} catch (Exception $e) {
+			} catch (\Exception $e) {
 				$this->messageManager->addSuccess(__('Something went wrong.'));
 			}
 		}

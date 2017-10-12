@@ -24,7 +24,7 @@ class Save extends \Magento\Framework\App\Action\Action {
 		try {
 			$model->save();
 			$this->messageManager->addSuccess(__('We\'ll call you very soon, wait plese.'));
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			$this->messageManager->addException($e, __('Something went wrong.'));
 		}
 		return $resultRedirect->setPath($this->_redirect->getRefererUrl());

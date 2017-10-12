@@ -6,8 +6,11 @@
  */
 -->
 <?php if($this->isActive()): ?>
+	<div class="callback-button">
+		<a href="javascript:void(0);" class="callback-button-icon callback-button-icon-pulse" alt="<?php echo __('Callback'); ?>" title="<?php echo __('Callback'); ?>" class="button" data-mage-init='{"SY_Callback/js/callback-button": {}}' sss></a>
+	</div>
 	<div style="display:none;">
-		<div id="callback-modal">
+		<div id="callback-modal" data-mage-init='{"SY_Callback/js/callback-modal": {}}'>
 			<form data-mage-init='{"validation": {}}' action="<?php echo $this->getUrl('sy_callback/post/save'); ?>" method="POST" id="callback-form">
 				<fieldset class="fieldset create info">
 					<legend class="legend"><span><?php echo __('Personal Information'); ?></span></legend><br>
@@ -64,4 +67,5 @@
 			</form>
 		</div>
 	</div>
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->getViewFileUrl('SY_Callback::css/callback.css'); ?>">
 <?php endif; ?>

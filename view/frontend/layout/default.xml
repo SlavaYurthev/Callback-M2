@@ -6,14 +6,9 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
-	<head>
-	    <css src="SY_Callback::css/callback-button.css" />
-	    <link src="SY_Callback::js/callback-button.js" />
-	</head>
 	<body>
 		<referenceContainer name="before.body.end">
-			<block class="SY\Callback\Block\Button" name="callback_button" as="callback.button" template="callback/button.phtml" />
-			<block class="SY\Callback\Block\Modal" name="callback_modal" as="callback.modal" template="callback/modal.phtml" />
+			<block class="SY\Callback\Block\Callback" name="callback" as="callback" template="callback.phtml" />
 		</referenceContainer>
 	</body>
 </page>
