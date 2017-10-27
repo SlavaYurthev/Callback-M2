@@ -18,20 +18,20 @@
     </virtualType>
     <virtualType name="CallbackGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
         <arguments>
-            <argument name="collection" xsi:type="object" shared="false">SY\Callback\Model\Resource\Request\Collection</argument>
+            <argument name="collection" xsi:type="object" shared="false">SY\Callback\Model\ResourceModel\Request\Collection</argument>
             <argument name="filterPool" xsi:type="object" shared="false">CallbackGridFilterPool</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SY\Callback\Model\Resource\Request\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="SY\Callback\Model\ResourceModel\Request\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">sy_callback_entity</argument>
-            <argument name="resourceModel" xsi:type="string">SY\Callback\Model\Resource\Request</argument>
+            <argument name="resourceModel" xsi:type="string">SY\Callback\Model\ResourceModel\Request</argument>
         </arguments>
     </virtualType>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="sy_callback_requests_listing_data_source" xsi:type="string">SY\Callback\Model\Resource\Request\Grid\Collection</item>
+                <item name="sy_callback_requests_listing_data_source" xsi:type="string">SY\Callback\Model\ResourceModel\Request\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
